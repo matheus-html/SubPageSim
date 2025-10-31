@@ -1,15 +1,20 @@
 package gui;
 import algoritmos.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-public class TelaSimulador extends JFrame{
+public class TelaSimulador extends JFrame {
+
     private JTextField campoPaginas;
     private JTextField campoFrames;
     private JButton botaoSimular;
     private JTextArea areaResultados;
+    private PainelGrafico painelGrafico;
 
     private AlgSub fifo;
     private AlgSub lru;
@@ -18,7 +23,7 @@ public class TelaSimulador extends JFrame{
 
     public TelaSimulador() {
         setTitle("Simulador de Substituição de Páginas");
-        setSize(500, 400);
+        setSize(550, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
@@ -47,9 +52,13 @@ public class TelaSimulador extends JFrame{
         areaResultados.setEditable(false);
         areaResultados.setFont(new Font("Monospaced", Font.PLAIN, 14));
         JScrollPane scrollPane = new JScrollPane(areaResultados);
+        scrollPane.setPreferredSize(new Dimension(500, 150));
+
+        painelGrafico = new PainelGrafico();
 
         add(painelEntrada, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
+        add(painelGrafico, BorderLayout.SOUTH);
 
         botaoSimular.addActionListener(new ActionListener() {
             @Override
@@ -67,7 +76,9 @@ public class TelaSimulador extends JFrame{
             String[] paginasComoString = linhaPaginas.trim().split("\\s+");
             int[] paginas = new int[paginasComoString.length];
             for (int i = 0; i < paginasComoString.length; i++) {
-                paginas[i] = Integer.parseInt(paginasComoString[i]);
+                if (!paginasComoString[i].isEmpty()) {
+                    paginas[i] = Integer.parseInt(paginasComoString[i]);
+                }
             }
 
             int faltasFIFO = fifo.simular(paginas, numQuadros);
@@ -78,10 +89,18 @@ public class TelaSimulador extends JFrame{
             areaResultados.setText("");
             areaResultados.append("Simulação com " + numQuadros + " frames:\n");
             areaResultados.append("------------------------------------------\n");
-            areaResultados.append("FIFO: " + faltasFIFO + " faltas de página\n");
-            areaResultados.append("LRU: " + faltasLRU + " faltas de página\n");
-            areaResultados.append("Ótimo: " + faltasOtimo + " faltas de página\n");
-            areaResultados.append("SegundaChance: " + faltasClock + " faltas de página\n");
+            areaResultados.append(String.format("FIFO: \t\t%d faltas de página\n", faltasFIFO));
+            areaResultados.append(String.format("LRU: \t\t%d faltas de página\n", faltasLRU));
+            areaResultados.append(String.format("Ótimo: \t\t%d faltas de página\n", faltasOtimo));
+            areaResultados.append(String.format("SegundaChance: \t%d faltas de página\n", faltasClock));
+
+            Map<String, Integer> resultadosParaGrafico = new LinkedHashMap<>();
+            resultadosParaGrafico.put("FIFO", faltasFIFO);
+            resultadosParaGrafico.put("LRU", faltasLRU);
+            resultadosParaGrafico.put("Ótimo", faltasOtimo);
+            resultadosParaGrafico.put("Clock", faltasClock);
+
+            painelGrafico.setResultados(resultadosParaGrafico);
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this,
