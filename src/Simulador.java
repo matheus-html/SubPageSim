@@ -1,9 +1,24 @@
 import algoritmos.*;
+import java.util.Scanner;
 
 public class Simulador {
     public static void main(String[] args) {
-        int[] paginas = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1};
-        int numQuadros = 4;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite a sequência de páginas (separada por ESPAÇO):");
+        String linhaPaginas = sc.nextLine();
+
+        System.out.println("Digite o número de quadros de memória:");
+        int numQuadros = sc.nextInt();
+
+        String[] paginasComoString = linhaPaginas.trim().split("\\s+");
+
+        int[] paginas = new int[paginasComoString.length];
+
+        for (int i = 0; i < paginasComoString.length; i++) {
+            paginas[i] = Integer.parseInt(paginasComoString[i]);
+        }
 
         AlgSub fifo = new FIFO();
         AlgSub lru = new LRU();
