@@ -1,5 +1,5 @@
-package gui;
 import algoritmos.*;
+import gui.PainelGrafico;
 
 import javax.swing.*;
 import java.awt.*;
