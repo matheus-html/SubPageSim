@@ -37,6 +37,36 @@ Além disso, o código-fonte completo, e o arquivo `README.md` com as instruçõ
 * [Link para o Repositório GitHub](https://github.com/matheus-html/SubPageSim)
 * [Link direto para o README.md](https://github.com/matheus-html/SubPageSim/blob/main/README.md)
 
+Para executar o projeto pelo console ou com a interface gráfica é necessário seguir o passo a passo abaixo:
+
+  Entre na pasta src onde estão os arquivos .java: 
+  
+  Digite o seguinte comando no terminal: 
+    
+    cd src 
+  
+  A classe Simulador.java é o ponto de entrada para a execução via console. 
+  Para rodar: 
+    
+    1. Compile o projeto (console): 
+      
+      javac Simulador.java  
+  
+    2.  Execute: 
+
+       java Simulador 
+
+  A interface gráfica foi implementada na classe TelaSimulador.java, utilizando a biblioteca Java Swing. 
+
+  Para rodar a interface: 
+
+  Compile a interface: 
+
+    javac TelaSimulador.java 
+    
+  Execute: 
+    
+    java TelaSimulador 
 ---
 
 ## Resultados e Discussão
@@ -68,7 +98,7 @@ Utilizando a mesma sequência de páginas do Cenário 2, a carga de trabalho foi
 
 ## Conclusão
 
-Destarte, o desenvolvimento do simulador permitiu obter perspectivas importantes sobre o desempenho relativo dos algoritmos de substituição de páginas. Os resultados confirmam que o algoritmo Ótimo é o caso ideal, e que o LRU é uma aproximação prática muito eficaz, superando consistentemente o FIFO. A implementação da interface gráfica com gráfico comparativo facilitou a visualização e análise de diferentes cargas de trabalho. Este trabalho cumpre os objetivos de criar um simulador funcional e avaliar o impacto de diferentes estratégias de gerenciamento de memória virtual.
+Destarte, o desenvolvimento do simulador permitiu obter perspectivas importantes sobre o desempenho relativo dos algoritmos de substituição de páginas. Os resultados confirmam que o algoritmo Ótimo é o caso ideal, e que o LRU é uma aproximação prática muito eficaz, superando consistentemente o FIFO. A implementação da interface gráfica com gráfico comparativo facilitou a visualização e análise de diferentes cargas de trabalho. Este trabalho cumpre os objetivos de criar um simulador funcional e avaliar o impacto de diferentes estratégias de gerenciamento de memória virtual.	 
 
 ---
 
