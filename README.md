@@ -58,4 +58,23 @@ Este cenário usa uma sequência clássica para demonstrar a Anomalia de Belady,
 *(Fonte: Dos próprios autores.)*
 
 ### Cenário 3: Anomalia de Belady (4 Frames)
-Utilizando a mesma sequência de páginas do Cenário 2, a carga de trabalho foi alterada aumentando a memória para 4 frames. A Figura 3 demonstra a Anomalia de Belady
+Utilizando a mesma sequência de páginas do Cenário 2, a carga de trabalho foi alterada aumentando a memória para 4 frames. A Figura 3 demonstra a Anomalia de Belady: o algoritmo FIFO (e, neste caso, o Relógio) teve seu desempenho piorado (de 9 para 10 faltas) mesmo com mais memória, provando ser uma escolha inadequada para esta carga de trabalho.
+
+[Insira aqui a imagem da Figura 3]
+![Gráfico comparativo dos Page Faults no Cenário 3 (4 frames)](assets/figura3.png)
+*(Fonte: Dos próprios autores.)*
+
+---
+
+## Conclusão
+
+Destarte, o desenvolvimento do simulador permitiu obter perspectivas importantes sobre o desempenho relativo dos algoritmos de substituição de páginas. Os resultados confirmam que o algoritmo Ótimo é o caso ideal, e que o LRU é uma aproximação prática muito eficaz, superando consistentemente o FIFO. A implementação da interface gráfica com gráfico comparativo facilitou a visualização e análise de diferentes cargas de trabalho. Este trabalho cumpre os objetivos de criar um simulador funcional e avaliar o impacto de diferentes estratégias de gerenciamento de memória virtual.
+
+---
+
+## Referências
+
+* DEVMEDIA. Introdução à interface GUI no Java. Disponível em: [https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646](https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646)
+* ORACLE. Java Swing - The Java™ Tutorials. Disponível em: [https://docs.oracle.com/javase/tutorial/uiswing/](https://docs.oracle.com/javase/tutorial/uiswing/)
+* TANENBAUM, A. S.; BOS, H. Sistemas Operacionais Modernos. 4ª ed. Pearson Prentice Hall, 2016.
+* FRÓS, Cláudio Luis. Substituição de Páginas. [S.l.: s.n.], [s.d.]. Disponível em: [https://www.inf.ufrgs.br/~johann/sisop1/aula19.substituindo.pdf](https://www.inf.ufrgs.br/~johann/sisop1/aula19.substituindo.pdf). Acesso em: 31 out. 2025.
