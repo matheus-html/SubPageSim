@@ -92,7 +92,7 @@ public class TelaSimulador extends JFrame {
             areaResultados.append(String.format("FIFO: \t\t%d faltas de página\n", faltasFIFO));
             areaResultados.append(String.format("LRU: \t\t%d faltas de página\n", faltasLRU));
             areaResultados.append(String.format("Ótimo: \t\t%d faltas de página\n", faltasOtimo));
-            areaResultados.append(String.format("SegundaChance: \t%d faltas de página\n", faltasClock));
+            areaResultados.append(String.format("SegundaChance (Clock): \t%d faltas de página\n", faltasClock));
 
             Map<String, Integer> resultadosParaGrafico = new LinkedHashMap<>();
             resultadosParaGrafico.put("FIFO", faltasFIFO);
