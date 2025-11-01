@@ -46,21 +46,19 @@ O simulador desenvolvido permite a entrada de dados de forma interativa para ana
 ### Cenário 1: Carga de Trabalho Padrão
 A primeira simulação utiliza uma sequência de referência longa (20 páginas) com 4 frames. Os resultados (Figura 1) mostram que LRU e Ótimo atingem o melhor desempenho (8 faltas), superando o FIFO (10 faltas), o que era esperado.
 
-![Figura 1: Teste com sequência padrão (7 0 1 2...) e 4 frames. ](SubPageSim/src/imagensREADME/Teste 1.jpg)
+![Figura 1: Teste com sequência padrão (7 0 1 2...) e 4 frames.](src/imagensREADME/Teste%201.jpg)
 *(Fonte: Dos próprios autores.)*
 
 ### Cenário 2: Anomalia de Belady (3 Frames)
 Este cenário usa uma sequência clássica para demonstrar a Anomalia de Belady, iniciando com 3 frames. Os resultados são apresentados na Figura 2.
 
-[Insira aqui a imagem da Figura 2]
-![Gráfico comparativo dos Page Faults no Cenário 2 (3 frames)](assets/figura2.png)
+![Figura 2: Teste da Anomalia (1 2 3 4...) com 3 frames.](src/imagensREADME/Teste%202.jpg)
 *(Fonte: Dos próprios autores.)*
 
 ### Cenário 3: Anomalia de Belady (4 Frames)
 Utilizando a mesma sequência de páginas do Cenário 2, a carga de trabalho foi alterada aumentando a memória para 4 frames. A Figura 3 demonstra a Anomalia de Belady: o algoritmo FIFO (e, neste caso, o Relógio) teve seu desempenho piorado (de 9 para 10 faltas) mesmo com mais memória, provando ser uma escolha inadequada para esta carga de trabalho.
 
-[Insira aqui a imagem da Figura 3]
-![Gráfico comparativo dos Page Faults no Cenário 3 (4 frames)](assets/figura3.png)
+![Figura 3: Teste da Anomalia (1 2 3 4...) com 4 frames.](src/imagensREADME/Teste%203.jpg)
 *(Fonte: Dos próprios autores.)*
 
 ---
