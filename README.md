@@ -46,7 +46,7 @@ O simulador desenvolvido permite a entrada de dados de forma interativa para ana
 ### Cenário 1: Carga de Trabalho Padrão
 A primeira simulação utiliza uma sequência de referência longa (20 páginas) com 4 frames. Os resultados (Figura 1) mostram que LRU e Ótimo atingem o melhor desempenho (8 faltas), superando o FIFO (10 faltas), o que era esperado.
 
-![Gráfico comparativo dos Page Faults: FIFO 10, LRU 8, Ótimo 8, Clock 9](src/imagensREADME/Teste 1.jpg)
+![Figura 1: Teste com sequência padrão (7 0 1 2...) e 4 frames. ](SubPageSim/src/imagensREADME/Teste 1.jpg)
 *(Fonte: Dos próprios autores.)*
 
 ### Cenário 2: Anomalia de Belady (3 Frames)
