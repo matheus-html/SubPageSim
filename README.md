@@ -94,6 +94,8 @@ Utilizando a mesma sequência de páginas do Cenário 2, a carga de trabalho foi
 
 *(Fonte: Dos próprios autores.)*
 
+Dessa forma, a simulação demonstra que, embora simples de implementar, o FIFO é uma escolha arriscada e muitas vezes ineficiente. Os resultados reforçam que algoritmos que consideram a localidade de referência, como o LRU e o Segunda chance, fornecem uma melhoria substancial de desempenho, com o LRU sendo uma aproximação prática e eficaz do algoritmo Ótimo.
+
 ---
 
 ## Conclusão
